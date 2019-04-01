@@ -1,0 +1,10 @@
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\ToDoListClientApp.exe.config
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\ToDoListClientApp.exe
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\ToDoListClientApp.pdb
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csprojAssemblyReference.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.Properties.Resources.resources
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csproj.GenerateResource.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csproj.CoreCompileInputs.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.exe
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.pdb
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.Form1.resources

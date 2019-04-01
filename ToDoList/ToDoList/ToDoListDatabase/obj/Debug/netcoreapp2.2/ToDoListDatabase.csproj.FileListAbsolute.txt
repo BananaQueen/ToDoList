@@ -1,0 +1,11 @@
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\bin\Debug\netcoreapp2.2\ToDoListDatabase.deps.json
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\bin\Debug\netcoreapp2.2\ToDoListDatabase.runtimeconfig.json
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\bin\Debug\netcoreapp2.2\ToDoListDatabase.runtimeconfig.dev.json
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\bin\Debug\netcoreapp2.2\ToDoListDatabase.dll
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\bin\Debug\netcoreapp2.2\ToDoListDatabase.pdb
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.csprojAssemblyReference.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.AssemblyInfoInputs.cache
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.AssemblyInfo.cs
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.dll
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.pdb
