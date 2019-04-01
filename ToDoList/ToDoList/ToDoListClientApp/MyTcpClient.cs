@@ -44,7 +44,7 @@ namespace ToDoListClientApp
             }
 
             Console.WriteLine("\n Press Enter to continue...");
-            //Console.Read();
+            Console.Read();
         }
     }
 }
