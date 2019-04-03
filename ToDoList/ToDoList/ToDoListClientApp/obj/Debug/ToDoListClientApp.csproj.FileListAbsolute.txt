@@ -13,3 +13,7 @@ C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Npgsql.pdb
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Npgsql.xml
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csproj.CopyComplete
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\System.Net.Http.Formatting.xml

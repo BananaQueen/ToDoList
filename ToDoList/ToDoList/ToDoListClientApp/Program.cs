@@ -4,6 +4,9 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ToDoListClientApp
 {
@@ -12,15 +15,14 @@ namespace ToDoListClientApp
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread]
         static void Main()
         {
-            MyTcpClient client = new MyTcpClient();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            
-
         }
     }
 }

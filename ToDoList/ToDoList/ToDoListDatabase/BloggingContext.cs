@@ -8,7 +8,7 @@ public class BloggingContext : DbContext
 { 
     public DbSet<ToDoEntity> ToDo { get; set; }
     public DbSet<CategoryEntity> Category { get; set; }
-    public DbSet<ToDo_For_MembersEntity> ToDo_For_Members { get; set; }
+    public DbSet<ToDoForMembersEntity> ToDo_For_Members { get; set; }
     public DbSet<TagEntity> Tag { get; set; }
 
 
