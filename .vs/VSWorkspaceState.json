@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ToDoList",
-    "\\ToDoList\\ToDoList",
-    "\\ToDoList\\ToDoList\\ToDoListServerApp"
+    "\\ToDoList\\ToDoList"
   ],
-  "SelectedNode": "\\ToDoList\\ToDoList\\ToDoList.sln",
+  "SelectedNode": "\\ToDoList\\ToDoList\\ToDoListClientApp",
   "PreviewInSolutionExplorer": false
 }
