@@ -36,21 +36,21 @@ namespace ToDoListServer.Controllers
 
         // POST: api/ToDoForMembers
         [HttpPost]
-        public bool Post([FromBody] ToDoForMembers toDoForMembers)
+        public ResponseMessage Post([FromBody] ToDoForMembers toDoForMembers)
         {
             return _service.CreateToDoForMembers(new CreateToDoForMembers { Email = toDoForMembers.Email, Tag = toDoForMembers.Tag, ToDo = toDoForMembers.ToDo });
         }
 
         // PUT: api/ToDoForMembers/5
         [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] ToDoForMembers toDoForMembers)
+        public ResponseMessage Put(int id, [FromBody] ToDoForMembers toDoForMembers)
         {
             return _service.UpdateToDoForMembers(new UpdateToDoForMembers { Email = toDoForMembers.Email, Id = id, Tag = toDoForMembers.Tag, ToDo = toDoForMembers.ToDo });
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public bool Delete(int id)
+        public ResponseMessage Delete(int id)
         {
             return _service.DeleteToDoForMembers(new DeleteToDoForMembers { Id = id });
         }

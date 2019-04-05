@@ -37,21 +37,21 @@ namespace ToDoListServer.Controllers
 
         // POST api/ToDo
         [HttpPost]
-        public bool Post([FromBody] ToDo todo)
+        public ResponseMessage Post([FromBody] ToDo todo)
         {
             return _service.CreateToDo(new CreateToDoRequest { Category = todo.Category, Description = todo.Description, EventDate = todo.EventDate, IsDone = todo.IsDone, Name = todo.Name, ReminderDate = todo.ReminderDate, Tag = todo.Tag });
         }
 
         // PUT api/ToDo
         [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] ToDo todo)
+        public ResponseMessage Put(int id, [FromBody] ToDo todo)
         {
             return _service.UpdateToDo(new UpdateToDoRequest { Id =id, Category = todo.Category, Description = todo.Description, EventDate = todo.EventDate, IsDone = todo.IsDone, Name = todo.Name, ReminderDate = todo.ReminderDate, Tag = todo.Tag });
         }
 
         // DELETE api/ToDo
         [HttpDelete("{id}")]
-        public bool Delete(int id)
+        public ResponseMessage Delete(int id)
         {
             return _service.DeleteToDo(new DeleteToDoRequest { Id = id });
         }

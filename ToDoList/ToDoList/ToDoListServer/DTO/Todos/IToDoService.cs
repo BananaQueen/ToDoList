@@ -9,8 +9,8 @@ namespace ToDoListServer.DTO.Todos
     {
         GetToDosResponse GetToDos();
         GetToDosResponse GetToDos(GetToDosRequest request);
-        bool CreateToDo(CreateToDoRequest request);
-        bool DeleteToDo(DeleteToDoRequest request);
-        bool UpdateToDo(UpdateToDoRequest request);
+        ResponseMessage CreateToDo(CreateToDoRequest request);
+        ResponseMessage DeleteToDo(DeleteToDoRequest request);
+        ResponseMessage UpdateToDo(UpdateToDoRequest request);
     }
 }

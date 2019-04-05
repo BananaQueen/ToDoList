@@ -16,7 +16,7 @@ namespace ToDoListServer.Services
             _context = context;
         }
 
-        public bool CreateToDoForMembers(CreateToDoForMembers request)
+        public ResponseMessage CreateToDoForMembers(CreateToDoForMembers request)
         {
             ResponseMessage responseMessage = new ResponseMessage();
 
@@ -29,17 +29,14 @@ namespace ToDoListServer.Services
                 if (string.IsNullOrEmpty(request.Email)  )
                 {
                     responseMessage.Errors.Add("The Email adress is null or empty");
-                    return responseMessage.IsOk;
                 }
                 if (request.ToDo == null)
                 {
                     responseMessage.Errors.Add("The ToDo object is null");
-                    return responseMessage.IsOk;
                 }
                 if (request.Tag == null)
                 {
                     responseMessage.Errors.Add("The Tag object is null");
-                    return responseMessage.IsOk;
                 }
                 
                 
@@ -52,16 +49,20 @@ namespace ToDoListServer.Services
                 });
                     _context.SaveChanges();
 
-                return responseMessage.IsOk;
+                if (!responseMessage.IsOk)
+                    return responseMessage;
             }
             catch (Exception msg)
             {
                 responseMessage.Errors.Add(msg.Message);
             }
-            return responseMessage.IsOk;
+            if (!responseMessage.IsOk)
+                return responseMessage;
+
+            return responseMessage;
         }
 
-        public bool DeleteToDoForMembers(DeleteToDoForMembers request)
+        public ResponseMessage DeleteToDoForMembers(DeleteToDoForMembers request)
         {
             ResponseMessage responseMessage = new ResponseMessage();
 
@@ -70,20 +71,23 @@ namespace ToDoListServer.Services
                 if (request.Id <= 0)
                 {
                     responseMessage.Errors.Add("The Id value is 0 or less");
-                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.ToDoForMembers.Remove(new ToDoForMembersEntity { Id = request.Id });
                     _context.SaveChanges();
                 }
-                return responseMessage.IsOk;
+                if (!responseMessage.IsOk)
+                    return responseMessage;
             }
             catch (Exception msg)
             {
                 responseMessage.Errors.Add(msg.Message);
             }
-            return responseMessage.IsOk;
+            if (!responseMessage.IsOk)
+                return responseMessage;
+
+            return responseMessage;
         }
 
         public GetToDosForMembersResponse GetToDosForMembers()
@@ -118,7 +122,6 @@ namespace ToDoListServer.Services
                 if (request.Id <= 0)
                 {
                     response.Errors.Add("The Id value is 0 or less");
-                    return response;
                 }
                 else
                 {
@@ -130,7 +133,8 @@ namespace ToDoListServer.Services
                         Tag = new DTO.Tags.Tag { Name = x.Tag.Name}
 
                     }).ToList();
-                    return response;
+                    if (!response.IsOk)
+                        return response;
                 }
             }
             catch (Exception msg)
@@ -139,10 +143,13 @@ namespace ToDoListServer.Services
             }
 
             response.Errors.Add("Something went wrong");
+            if (!response.IsOk)
+                return response;
+
             return response;
         }
 
-        public bool UpdateToDoForMembers(UpdateToDoForMembers request)
+        public ResponseMessage UpdateToDoForMembers(UpdateToDoForMembers request)
         {
             ResponseMessage responseMessage = new ResponseMessage();
 
@@ -156,7 +163,6 @@ namespace ToDoListServer.Services
                 if (toDoForMembers == null)
                 {
                     responseMessage.Errors.Add("ToDoForMembers is null");
-                    return responseMessage.IsOk;
                 }
                 else
                 {
@@ -166,13 +172,17 @@ namespace ToDoListServer.Services
                     toDoForMembers.Tag = tag;
                     _context.SaveChanges();
                 }
-                return responseMessage.IsOk;
+                if (!responseMessage.IsOk)
+                    return responseMessage;
             }
             catch (Exception msg)
             {
                 responseMessage.Errors.Add(msg.Message);
             }
-            return responseMessage.IsOk;
+            if (!responseMessage.IsOk)
+                return responseMessage;
+
+            return responseMessage;
         }
     }
 }

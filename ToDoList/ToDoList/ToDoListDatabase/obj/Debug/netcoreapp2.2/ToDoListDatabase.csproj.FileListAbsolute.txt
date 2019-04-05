@@ -8,4 +8,3 @@ C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.AssemblyInfo.cs
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.dll
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.pdb
-C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListDatabase\obj\Debug\netcoreapp2.2\ToDoListDatabase.csprojAssemblyReference.cache

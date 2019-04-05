@@ -9,8 +9,8 @@ namespace ToDoListServer.DTO.TodosForMembers
     {
         GetToDosForMembersResponse GetToDosForMembers();
         GetToDosForMembersResponse GetToDosForMembers(GetToDosForMembersRequest request);
-        bool CreateToDoForMembers(CreateToDoForMembers request);
-        bool DeleteToDoForMembers(DeleteToDoForMembers request);
-        bool UpdateToDoForMembers(UpdateToDoForMembers request);
+        ResponseMessage CreateToDoForMembers(CreateToDoForMembers request);
+        ResponseMessage DeleteToDoForMembers(DeleteToDoForMembers request);
+        ResponseMessage UpdateToDoForMembers(UpdateToDoForMembers request);
     }
 }

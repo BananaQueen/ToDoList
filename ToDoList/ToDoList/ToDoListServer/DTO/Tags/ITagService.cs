@@ -9,8 +9,8 @@ namespace ToDoListServer.DTO.Tags
     {
         GetTagsResponse GetTags();
         GetTagsResponse GetTags(GetTagsRequest request);
-        bool CreateTag(CreateTagRequest request);
-        bool DeleteTag(DeleteTagRequest request);
-        bool UpdateTag(UpdateTagRequest request);
+        ResponseMessage CreateTag(CreateTagRequest request);
+        ResponseMessage DeleteTag(DeleteTagRequest request);
+        ResponseMessage UpdateTag(UpdateTagRequest request);
     }
 }

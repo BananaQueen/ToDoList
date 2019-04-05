@@ -9,6 +9,7 @@ C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Npgsql.pdb
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\Npgsql.xml
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csprojAssemblyReference.cache
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.Form1.resources
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.Properties.Resources.resources
 C:\Users\Oszołomy\source\repos\ToDoList\ToDoList\ToDoList\ToDoListClientApp\obj\Debug\ToDoListClientApp.csproj.GenerateResource.cache

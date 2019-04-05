@@ -9,8 +9,8 @@ namespace ToDoListServer.DTO.Categories
     {
         GetCategoriesResponse GetCategories();
         GetCategoriesResponse GetCategories(GetCategoriesRequest request);
-        bool CreateCategory(CreateCategoryRequest request);
-        bool DeleteCategory(DeleteCategoryRequest request);
-        bool UpdateCategory(UpdateCategoryRequest request);
+        ResponseMessage CreateCategory(CreateCategoryRequest request);
+        ResponseMessage DeleteCategory(DeleteCategoryRequest request);
+        ResponseMessage UpdateCategory(UpdateCategoryRequest request);
     }
 }

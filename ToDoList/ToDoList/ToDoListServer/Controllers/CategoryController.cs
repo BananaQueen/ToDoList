@@ -35,21 +35,21 @@ namespace ToDoListServer.Controllers
 
         // POST: api/Category
         [HttpPost]
-        public bool Post([FromBody] Category category)
+        public ResponseMessage Post([FromBody] Category category)
         {
             return _service.CreateCategory(new CreateCategoryRequest { Name = category.Name });
         }
 
         // PUT: api/Category/5
         [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] string value)
+        public ResponseMessage Put(int id, [FromBody] string value)
         {
             return _service.UpdateCategory(new UpdateCategoryRequest { Id = id, Name = value });
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public bool Delete(int id)
+        public ResponseMessage Delete(int id)
         {
             return _service.DeleteCategory(new DeleteCategoryRequest { Id = id });
         }

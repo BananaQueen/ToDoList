@@ -35,21 +35,21 @@ namespace ToDoListServer.Controllers
 
         // POST: api/Tag
         [HttpPost]
-        public bool Post([FromBody] Tag tag)
+        public ResponseMessage Post([FromBody] Tag tag)
         {
             return _service.CreateTag(new CreateTagRequest { Name = tag.Name });
         }
 
         // PUT: api/Tag/5
         [HttpPut("{id}")]
-        public bool Put(int id, [FromBody] string value)
+        public ResponseMessage Put(int id, [FromBody] string value)
         {
             return _service.UpdateTag(new UpdateTagRequest { Id = id, Name = value });
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public bool Delete(int id)
+        public ResponseMessage Delete(int id)
         {
             return _service.DeleteTag(new DeleteTagRequest { Id = id });
         }

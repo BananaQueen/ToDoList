@@ -50,7 +50,6 @@ namespace ToDoListServer.Services
                 if(request.Id <= 0)
                 {
                     response.Errors.Add("The Id value is 0 or less");
-                    return response;
                 }
                 else
                 {
@@ -67,7 +66,7 @@ namespace ToDoListServer.Services
             return response;
         }
 
-        public bool CreateCategory(CreateCategoryRequest request)
+        public ResponseMessage CreateCategory(CreateCategoryRequest request)
         {
             ResponseMessage responseMessage = new ResponseMessage();
 
@@ -76,23 +75,26 @@ namespace ToDoListServer.Services
                 if (string.IsNullOrEmpty(request.Name))
                 {
                     responseMessage.Errors.Add("Name is empty or null");
-                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.Category.Add(new CategoryEntity { Name = request.Name });
                     _context.SaveChanges();
                 }
-                return responseMessage.IsOk;
+                if (!responseMessage.IsOk)
+                    return responseMessage;
             }
             catch (Exception msg)
             {
                 responseMessage.Errors.Add(msg.Message);
             }
-            return responseMessage.IsOk;
+            if (!responseMessage.IsOk)
+                return responseMessage;
+
+            return responseMessage;
         }
 
-        public bool DeleteCategory(DeleteCategoryRequest request)
+        public ResponseMessage DeleteCategory(DeleteCategoryRequest request)
         {
             ResponseMessage responseMessage = new ResponseMessage();
 
@@ -101,46 +103,53 @@ namespace ToDoListServer.Services
                 if (request.Id <= 0)
                 {
                     responseMessage.Errors.Add("The Id value is 0 or less");
-                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.Category.Remove(new CategoryEntity { Id = request.Id });
                     _context.SaveChanges();
                 }
-                return responseMessage.IsOk;
+                if (!responseMessage.IsOk)
+                    return responseMessage;
             }
             catch (Exception msg)
             {
                 responseMessage.Errors.Add(msg.Message);
             }
-            return responseMessage.IsOk;
+            if (!responseMessage.IsOk)
+                return responseMessage;
+
+            return responseMessage;
         }
 
-        public bool UpdateCategory(UpdateCategoryRequest request)
+        public ResponseMessage UpdateCategory(UpdateCategoryRequest request)
         {
             var response = new CreateCategoryRequest();
 
             try
             {
                 var category = _context.Category.FirstOrDefault(x => x.Id == request.Id);
+
                 if (category == null)
                 {
                     response.Errors.Add("The category is null");
-                    return response.IsOk;
                 }
                 else
                 {
                     category.Name = request.Name;
                     _context.SaveChanges();
-                }
-                return response.IsOk;
+                }    
+                if (!response.IsOk)
+                    return response;
             }
             catch (Exception msg)
             {
                 response.Errors.Add(msg.Message);
             }
-            return response.IsOk;
+            if (!response.IsOk)
+                return response;
+
+            return response;
         }
     }
 
