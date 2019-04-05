@@ -18,7 +18,7 @@ namespace ToDoListServer.Services
 
         public bool CreateToDoForMembers(CreateToDoForMembers request)
         {
-            var response = new CreateToDoForMembers();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             var tag = _context.Tag.FirstOrDefault(x => x.Id == request.Tag.Id);
 
@@ -26,52 +26,64 @@ namespace ToDoListServer.Services
 
             try
             {
-                if (string.IsNullOrEmpty(request.Email) || request.ToDo == null || request.Tag == null )
+                if (string.IsNullOrEmpty(request.Email)  )
                 {
-                    return false;
+                    responseMessage.Errors.Add("The Email adress is null or empty");
+                    return responseMessage.IsOk;
                 }
-                else
+                if (request.ToDo == null)
                 {
-                    _context.ToDoForMembers.Add(new ToDoForMembersEntity
-                    {
-                        Email = request.Email,
-                        Tag = tag,
-                        ToDo = todo
+                    responseMessage.Errors.Add("The ToDo object is null");
+                    return responseMessage.IsOk;
+                }
+                if (request.Tag == null)
+                {
+                    responseMessage.Errors.Add("The Tag object is null");
+                    return responseMessage.IsOk;
+                }
+                
+                
+                _context.ToDoForMembers.Add(new ToDoForMembersEntity
+                {
+                    Email = request.Email,
+                    Tag = tag,
+                    ToDo = todo
 
-                    });
+                });
                     _context.SaveChanges();
-                }
-                return true;
+
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
 
         public bool DeleteToDoForMembers(DeleteToDoForMembers request)
         {
-            var response = new DeleteToDoForMembers();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             try
             {
-                if (request.Id == 0)
+                if (request.Id <= 0)
                 {
-                    return false;
+                    responseMessage.Errors.Add("The Id value is 0 or less");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.ToDoForMembers.Remove(new ToDoForMembersEntity { Id = request.Id });
                     _context.SaveChanges();
                 }
-                return true;
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
 
         public GetToDosForMembersResponse GetToDosForMembers()
@@ -91,7 +103,7 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
             return response;
@@ -103,9 +115,9 @@ namespace ToDoListServer.Services
 
             try
             {
-                if (request.Id < 0)
+                if (request.Id <= 0)
                 {
-                    response = null;
+                    response.Errors.Add("The Id value is 0 or less");
                     return response;
                 }
                 else
@@ -123,16 +135,16 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
-            response = null;
+            response.Errors.Add("Something went wrong");
             return response;
         }
 
         public bool UpdateToDoForMembers(UpdateToDoForMembers request)
         {
-            var response = new UpdateToDoForMembers();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             var tag = _context.Tag.FirstOrDefault(x => x.Id == request.Tag.Id);
 
@@ -143,7 +155,8 @@ namespace ToDoListServer.Services
                 var toDoForMembers = _context.ToDoForMembers.FirstOrDefault(x => x.Id == request.Id);
                 if (toDoForMembers == null)
                 {
-                    return false;
+                    responseMessage.Errors.Add("ToDoForMembers is null");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
@@ -153,13 +166,13 @@ namespace ToDoListServer.Services
                     toDoForMembers.Tag = tag;
                     _context.SaveChanges();
                 }
-                return true;
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
             return response;
@@ -47,9 +47,9 @@ namespace ToDoListServer.Services
             
             try
             {
-                if(request.Id < 0)
+                if(request.Id <= 0)
                 {
-                    response = null;
+                    response.Errors.Add("The Id value is 0 or less");
                     return response;
                 }
                 else
@@ -60,59 +60,61 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
-            response = null;
+            response.Errors.Add("Something went wrong");
             return response;
         }
 
         public bool CreateCategory(CreateCategoryRequest request)
         {
-            var response = new CreateCategoryRequest();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             try
             {
                 if (string.IsNullOrEmpty(request.Name))
                 {
-                    return false;
+                    responseMessage.Errors.Add("Name is empty or null");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.Category.Add(new CategoryEntity { Name = request.Name });
                     _context.SaveChanges();
                 }
-                return true;
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
 
         public bool DeleteCategory(DeleteCategoryRequest request)
         {
-            var response = new CreateCategoryRequest();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             try
             {
-                if (request.Id == 0)
+                if (request.Id <= 0)
                 {
-                    return false;
+                    responseMessage.Errors.Add("The Id value is 0 or less");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.Category.Remove(new CategoryEntity { Id = request.Id });
                     _context.SaveChanges();
                 }
-                return true;
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
 
         public bool UpdateCategory(UpdateCategoryRequest request)
@@ -124,20 +126,21 @@ namespace ToDoListServer.Services
                 var category = _context.Category.FirstOrDefault(x => x.Id == request.Id);
                 if (category == null)
                 {
-                    return false;
+                    response.Errors.Add("The category is null");
+                    return response.IsOk;
                 }
                 else
                 {
                     category.Name = request.Name;
                     _context.SaveChanges();
                 }
-                return true;
+                return response.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
-            return false;
+            return response.IsOk;
         }
     }
 

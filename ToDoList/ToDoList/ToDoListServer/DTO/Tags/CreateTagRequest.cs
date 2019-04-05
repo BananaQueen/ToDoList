@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoListServer.DTO.Tags
 {
-    public class CreateTagRequest
+    public class CreateTagRequest : ResponseMessage
     {
         public string Name { get; set; }
     }

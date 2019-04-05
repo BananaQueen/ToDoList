@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoListServer.DTO.Tags
 {
-    public class GetTagsResponse
+    public class GetTagsResponse : ResponseMessage
     {
         public List<Tag> Tags { get; set; }
     }

@@ -24,44 +24,46 @@ namespace ToDoListServer.Services
             {
                 if (string.IsNullOrEmpty(request.Name))
                 {
-                    return false;
+                    response.Errors.Add("The name is empty or null");
+                    return response.IsOk;
                 }
                 else
                 {
                     _context.Tag.Add(new ToDoList.Entities.TagEntity { Name = request.Name });
                     _context.SaveChanges();
                 }
-                return true;
+                return response.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
-            return false;
+            return response.IsOk;
         }
 
         public bool DeleteTag(DeleteTagRequest request)
         {
-            var response = new DeleteTagRequest();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             try
             {
-                if (request.Id == 0)
+                if (request.Id <= 0)
                 {
-                    return false;
+                    responseMessage.Errors.Add("The Id value is 0 or less");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
                     _context.Tag.Remove(new ToDoList.Entities.TagEntity { Id = request.Id });
                     _context.SaveChanges();
                 }
-                return true;
+                return responseMessage.IsOk;
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
 
         public GetTagsResponse GetTags()
@@ -79,7 +81,7 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
             return response;
@@ -91,9 +93,9 @@ namespace ToDoListServer.Services
 
             try
             {
-                if(request.Id < 0)
+                if(request.Id <= 0)
                 {
-                    response = null;
+                    response.Errors.Add("The Id value is 0 or less");
                     return response;
                 }
                 else
@@ -104,23 +106,24 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                response.Errors.Add(msg.Message);
             }
 
-            response = null;
+            response.Errors.Add("Something went wrong");
             return response;
         }
 
         public bool UpdateTag(UpdateTagRequest request)
         {
-            var response = new UpdateTagRequest();
+            ResponseMessage responseMessage = new ResponseMessage();
 
             try
             {
                 var tag = _context.Tag.FirstOrDefault(x => x.Id == request.Id);
                 if (tag == null)
                 {
-                    return false;
+                    responseMessage.Errors.Add("The Tag is null");
+                    return responseMessage.IsOk;
                 }
                 else
                 {
@@ -131,9 +134,9 @@ namespace ToDoListServer.Services
             }
             catch (Exception msg)
             {
-                Console.WriteLine(msg.Message);
+                responseMessage.Errors.Add(msg.Message);
             }
-            return false;
+            return responseMessage.IsOk;
         }
     }
 }

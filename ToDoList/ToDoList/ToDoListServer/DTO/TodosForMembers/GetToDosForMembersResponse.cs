@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoListServer.DTO.TodosForMembers
 {
-    public class GetToDosForMembersResponse
+    public class GetToDosForMembersResponse : ResponseMessage
     {
         public List<ToDoForMembers> ToDosForMembers { get; set; }
     }

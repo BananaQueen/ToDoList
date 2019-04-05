@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ToDoListServer.DTO.Categories
 {
-    public class GetCategoriesResponse
+    public class GetCategoriesResponse : ResponseMessage
     {
         public List<Category> Categories { get; set; }
     }
