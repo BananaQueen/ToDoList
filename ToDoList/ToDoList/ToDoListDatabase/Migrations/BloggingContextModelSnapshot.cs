@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ToDoList.Migrations
 {
-    [DbContext(typeof(BloggingContext))]
+    [DbContext(typeof(ToDoContext))]
     partial class BloggingContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

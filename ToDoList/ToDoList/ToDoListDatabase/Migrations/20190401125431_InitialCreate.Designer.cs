@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ToDoList.Migrations
 {
-    [DbContext(typeof(BloggingContext))]
+    [DbContext(typeof(ToDoContext))]
     [Migration("20190401125431_InitialCreate")]
     partial class InitialCreate
     {
